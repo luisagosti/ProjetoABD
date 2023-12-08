@@ -1,0 +1,32 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table Passageiro {
+  ID_Passageiro integer [primary key]
+  Primeiro_Nome varchar
+  Ultimo_Nome varchar
+  Tipo_Bagagem varchar
+}
+
+Table Voo {
+  ID_Voo integer [primary key]
+  N_Assentos_Disponiveis integer
+  Tipo_Aviao varchar 
+}
+
+Table Assento {
+  ID_Assento integer [primary key]
+  Numero_Assento varchar
+  Fila integer
+  Coluna varchar
+  Tipo_Assento varchar // Janela, Corredor, etc. 
+}
+
+
+Table Reserva {
+  ID_Reserva integer [primary key]
+  ID_Passageiro integer [ref: > Passageiro.ID_Passageiro]
+  ID_Voo integer [ref: < Voo.ID_Voo]
+  ID_Assento integer [ref: < Assento.ID_Assento]
+  Preco_Total float 
+}
