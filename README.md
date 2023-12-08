@@ -76,4 +76,5 @@
 - Inteiro (int): Utilizado para representar IDs, quantidades, etc.
 - String: Utilizado para representar nomes, tipos de bagagem, etc.
 - Float: Utilizado para representar valores monetários.
-
+- 
+![Diagrama UML](Untitled.png)
